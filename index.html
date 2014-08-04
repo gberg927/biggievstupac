@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Biggie Vs. Tupac</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="container" id="wrapper">
+		<div class="header">
+			<h3>Biggie Vs Tupac</h3>
+		</div>
+
+		<div class="jumbotron">
+			<h1 id="jumboTitle"></h1>
+			<img id="biggieImage" class="img-responsive" alt="Biggie" src="img/biggie.jpg"/>
+			<img id="tupacImage" class="img-responsive" alt="Tupac" src="img/tupac.jpg"/>
+			<img id="tieImage" class="img-responsive" alt="Tie" src="img/tie.jpg"/>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h4>Biggie: </h4> <span id='biggieCount'></span>
+						<h4>Tupac: </h4> <span id='tupacCount'></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<h4>Vote for Biggie</h4>
+				<button type="button" class="btn btn-default" onclick="biggieVote()">Vote!</button>
+			</div>
+
+			<div class="col-lg-6">
+				<h4>Vote for Tupac</h4>
+				<button type="button" class="btn btn-default" onclick="tupacVote()">Vote!</button>
+			</div>
+		</div>
+
+		<div class="footer">
+			<p>&copy; Company 2014</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+		    loadData();
+		});
+	</script>
+</body>
+</html>
