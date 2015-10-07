@@ -58,9 +58,6 @@
 		});
 
 		function loadData() {
-			//Example JSON
-			//{"votes": {"biggie": 900, "tupac": 800}}
-
 			$.ajax({
 				dataType: "json",
 				url: '<?php echo base_url(); ?>votes/getCounts',
@@ -71,19 +68,16 @@
 					$('#biggieCount').text(bCount);
 					$('#tupacCount').text(tCount);
 					if (bCount > tCount){
-						//$('#jumboTitle').text('Biggie');
 						$('#biggieImage').show();
 						$('#tupacImage').hide();
 						$('#tieImage').hide();
 					}
 					else if (tCount > bCount) {
-						//$('#jumboTitle').text('Tupac');
 						$('#tupacImage').show();
 						$('#biggieImage').hide();
 						$('#tieImage').hide();
 					}
 					else {
-						//$('#jumboTitle').text("That shit's a tie!");
 						$('#tieImage').show();
 						$('#tupacImage').hide();
 						$('#biggieImage').hide();
@@ -98,8 +92,7 @@
 				type: "POST",
 				url: '<?php echo base_url(); ?>votes/vote/',
 				data: {'title': title,
-					'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
-				},
+					'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'},
 				success: function() {
 					$('#' + title + 'Button').toggleClass('btn-success');
 					$('#biggieButton').prop('disabled', true);

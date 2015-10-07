@@ -27,10 +27,14 @@ class Votes extends CI_Controller {
 
 	public function vote()
 	{
-		$title = $this->input->post('title');
-		$ip = $this->input->ip_address();
-		$sql = 'INSERT INTO votes (voteType) SELECT id FROM voteType WHERE title = "' . $title . '"';
-		$this->db->query($sql);
-
+		if ($this->input->is_ajax_request()) {
+			$title = $this->input->post('title');
+			echo $title;
+			if ($title != '') {
+				$ip = $this->input->ip_address();
+				$sql = 'INSERT INTO votes (ip_address, voteType) SELECT "' . $ip . '", id FROM voteType WHERE title = "' . $title . '"';
+				$this->db->query($sql);
+			}
+		}
 	}
 }
